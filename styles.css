@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    margin: 20px;
+    border: 1px solid #000;;
+    border-radius: 5px;
+    padding: 4px;
+}
+.tools{
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.drawing-tools button,
+.removing-tools button{
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    width: 60px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: none;
+
+}
+.drawing-tools button i,
+.removing-tools button i{
+    font-size: 20px;
+}
+.drawing-tools #triangle{
+    position: fixed;
+    align-items: center;
+}
+.drawing-tools #triangle i{
+    font-size: 22px;
+}
+
+.tools button{
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.tools button:hover{
+    cursor: pointer;
+    background: rgb(245, 243, 243);
+}
+
+.tool:is(:hover, .active) i{
+    filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+
+.drawing-board{
+    padding: 4px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+}
+.canvas-container{
+    width: 95%;
+    height: 90vh;
+    border: 1px solid #000;
+    border-radius: 5px;
+    flex: 8;
+}
+.canvas-container canvas{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.color-tool{
+    padding: 5px;
+    margin-left: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.color-option{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.color-tool .lable-color{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.color-option  div{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: relative;
+}
+.color-option .option:nth-child(1){
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+}
+.color-option .option:nth-child(2){
+    background-color: #008000;
+}
+.color-option .option:nth-child(3){
+    background-color: #0000ff;
+}
+.color-option .option:nth-child(4){
+    background-color: #ffff00;
+}
+.color-option .option:nth-child(5){
+    background-color: #ff0000;
+}
+.color-option .option:nth-child(6){
+    background-color: #000000;
+}
+
+.color-option div:hover, .color-tool input:hover{
+    cursor: pointer;
+}
+
+.color-tool .option.selected::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+    /* animation: all 0.3ms ease-in; */
+}
+
+.color-option .option:first-child.selected::before{
+    border-color: #ccc;
+}
+
+.option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+}
+
+.fillbox-container{
+    margin-left: 8px;
+    margin-bottom: 15px;
+}
+.fillbox-container label{
+    /* font-size: 24px; */
+    margin-bottom: 5px;
+}

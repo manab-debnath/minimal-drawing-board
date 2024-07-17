@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Drawing App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/erase.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <section class="tools">
+            <div class="drawing-tools options">
+                <button class="tool active" id="brush"><i class="fa-solid fa-paintbrush"></i></button>
+                <button class="tool" id="eraser"><i class="fa-solid fa-eraser"></i></button>
+                <button class="tool" id="rectangle"><i class="fa-regular fa-square"></i></button>
+                <button class="tool" id="circle"><i class="fa-regular fa-circle"></i></button>
+                <button class="tool" id="triangle"><i><ion-icon name="triangle-outline"></ion-icon></i></button>
+                <!-- <i class="fa-solid fa-caret-up"></i> -->
+                <!-- <ion-icon name="triangle-outline"></ion-icon> -->
+            </div>
+            
+            <div class="removing-tools options">
+                <!-- <button class="tool" id="undo"><i class="fa-solid fa-rotate-left"></i></button>
+                <button class="tool" id="redo"><i class="fa-solid fa-rotate-right"></i></button> -->
+                <button class="tool" id="save"><i class="fa-solid fa-download"></i></button>
+                <button class="tool" id="clear"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </section>
+
+        <section class="drawing-board">
+            <div class="canvas-container">
+                <canvas></canvas>
+            </div>
+            <div class="color-tool">
+                <label class="lable-color" for="color-option">
+                    <span>Select Color</span>
+                </label>
+                <div class="color-option options">
+                    <div class="option" id="red"></div>
+                    <div class="option" id="green"></div>
+                    <div class="option" id="blue"></div>
+                    <div class="option" id="yellow"></div>
+                    <div class="option" id="violet"></div>
+                    <div class="option selected" id="black">
+                        <input type="color" id="color-picker" value="#000000">
+                    </div>
+                </div>
+                <div class="fillbox-container">
+                    <input type="checkbox" id="fill-color">
+                    <label for="fill-color">Fill color</label>
+                </div>
+                
+                <label for="size-slider">Stroke size</label>
+                <input id="size-slider" type="range" value="5" min="1" max="50">
+            </div>
+        </section>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>
